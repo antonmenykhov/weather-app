@@ -1,0 +1,75 @@
+{
+    "user": [
+        {
+            "name": "Сегодня",
+            "type": "action",
+            "action": "showDays",
+            "arg": 1
+        },
+        {
+            "name": "Почасовой",
+            "type": "action",
+            "action": "showDays",
+            "arg": 2
+        },
+        {
+            "name": "Неделя",
+            "type": "action",
+            "action": "showDays",
+            "arg": 7
+        },
+        {
+            "name": "Города",
+            "type": "submenu",
+            "action": "",
+            "subMenu": [
+                {
+                    "name": "Тюмень",
+                    "type": "action",
+                    "action": "getData",
+                    "arg": "тюмень",
+                    "subMenu": []
+                },
+                {
+                    "name": "Москва",
+                    "type": "action",
+                    "action": "getData",
+                    "arg": "москва",
+                    "subMenu": []
+                },
+                {
+                    "name": "Санкт-Петербург",
+                    "type": "action",
+                    "action": "getData",
+                    "arg": "санкт-петербург",
+                    "subMenu": []
+                }
+            ]
+        },
+        {
+            "name": "Ссылки",
+            "type": "submenu",
+            "action": "",
+            "subMenu": [
+                {
+                    "name": "Vue.js",
+                    "type": "link",
+                    "action": "https://vuejs.org/",
+                    "subMenu": []
+                },
+                {
+                    "name": "Axios",
+                    "type": "link",
+                    "action": "https://axios-http.com/docs/intro",
+                    "subMenu": []
+                },
+                {
+                    "name": "Moment.js",
+                    "type": "link",
+                    "action": "https://momentjs.com/",
+                    "subMenu": []
+                }
+            ]
+        }
+    ]
+}
