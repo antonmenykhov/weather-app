@@ -139,7 +139,7 @@ export default {
             top: 0;
             z-index: 997;
             transition: all .3s;
-            transform: translateY(-100vh);
+            transform: translateY(-200vh);
 
             .main-menu,
             .user-sect {
