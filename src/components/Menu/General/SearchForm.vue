@@ -47,4 +47,10 @@ export default {
     }
 
 }
+@media (max-width: 959px) {
+    .search-form input{
+        width: 200px;
+        margin-top: 0;
+    }
+}
 </style>

@@ -1,22 +1,28 @@
 {
     "user": [
         {
-            "name": "Сегодня",
+            "name": "Погода сегодня",
             "type": "action",
             "action": "showDays",
-            "arg": 1
+            "arg": {"template": "now"}
         },
         {
-            "name": "Почасовой",
+            "name": "Почасовой прогноз",
             "type": "action",
             "action": "showDays",
-            "arg": 2
+            "arg":{"template": "hourly"} 
         },
         {
-            "name": "Неделя",
+            "name": "Прогноз на 3 дня",
             "type": "action",
             "action": "showDays",
-            "arg": 7
+            "arg":{"template": "threedays"} 
+        },
+        {
+            "name": "Прогноз на неделю",
+            "type": "action",
+            "action": "showDays",
+            "arg":{"template": "week"} 
         },
         {
             "name": "Города",
@@ -26,21 +32,21 @@
                 {
                     "name": "Тюмень",
                     "type": "action",
-                    "action": "getData",
+                    "action": "changeCity",
                     "arg": "тюмень",
                     "subMenu": []
                 },
                 {
                     "name": "Москва",
                     "type": "action",
-                    "action": "getData",
+                    "action": "changeCity",
                     "arg": "москва",
                     "subMenu": []
                 },
                 {
                     "name": "Санкт-Петербург",
                     "type": "action",
-                    "action": "getData",
+                    "action": "changeCity",
                     "arg": "санкт-петербург",
                     "subMenu": []
                 }
@@ -67,6 +73,104 @@
                     "name": "Moment.js",
                     "type": "link",
                     "action": "https://momentjs.com/",
+                    "subMenu": []
+                }
+            ]
+        }
+    ],
+    "admin": [
+        {
+            "name": "Погода сегодня",
+            "type": "action",
+            "action": "showDays",
+            "arg": {"template": "now"}
+        },
+        {
+            "name": "Почасовой прогноз",
+            "type": "action",
+            "action": "showDays",
+            "arg":{"template": "hourly"} 
+        },
+        {
+            "name": "Прогноз на 3 дня",
+            "type": "action",
+            "action": "showDays",
+            "arg":{"template": "threedays"} 
+        },
+        {
+            "name": "Прогноз на неделю",
+            "type": "action",
+            "action": "showDays",
+            "arg":{"template": "week"} 
+        },
+        {
+            "name": "Города",
+            "type": "submenu",
+            "action": "",
+            "subMenu": [
+                {
+                    "name": "Тюмень",
+                    "type": "action",
+                    "action": "changeCity",
+                    "arg": "тюмень",
+                    "subMenu": []
+                },
+                {
+                    "name": "Москва",
+                    "type": "action",
+                    "action": "changeCity",
+                    "arg": "москва",
+                    "subMenu": []
+                },
+                {
+                    "name": "Санкт-Петербург",
+                    "type": "action",
+                    "action": "changeCity",
+                    "arg": "санкт-петербург",
+                    "subMenu": []
+                }
+            ]
+        },
+        {
+            "name": "Ссылки",
+            "type": "submenu",
+            "action": "",
+            "subMenu": [
+                {
+                    "name": "Vue.js",
+                    "type": "link",
+                    "action": "https://vuejs.org/",
+                    "subMenu": []
+                },
+                {
+                    "name": "Axios",
+                    "type": "link",
+                    "action": "https://axios-http.com/docs/intro",
+                    "subMenu": []
+                },
+                {
+                    "name": "Moment.js",
+                    "type": "link",
+                    "action": "https://momentjs.com/",
+                    "subMenu": []
+                }
+            ]
+        },
+        {
+            "name": "Управление погодой",
+            "type": "submenu",
+            "action": "",
+            "subMenu": [
+                {
+                    "name": "Увеличить температуру",
+                    "type": "action",
+                    "action": "tempPlus",
+                    "subMenu": []
+                },
+                {
+                    "name": "Уменьшить температуру",
+                    "type": "action",
+                    "action": "tempMinus",
                     "subMenu": []
                 }
             ]

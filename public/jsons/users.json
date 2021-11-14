@@ -1,0 +1,12 @@
+[
+    {
+        "user_name": "Пользователь",
+        "user_role": "user",
+        "jwt": "secertTokenUser" 
+    },
+    {
+        "user_name": "Администратор",
+        "user_role": "admin",
+        "jwt": "secertTokenAdmin" 
+    }
+]

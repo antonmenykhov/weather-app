@@ -6,6 +6,9 @@
     <a :href="item.action" target="_blank" v-if="item.type==='link'">{{item.name}}</a>
     <button class="sub-menu-wrapper" v-if="item.type==='submenu'">
         {{item.name}}
+        <span class="material-icons">
+            arrow_forward_ios
+        </span>
         <ul class="sub-menu">
             <menu-item v-for="subItem,i in item.subMenu" :key="i" :item="subItem"></menu-item>
         </ul>
@@ -22,8 +25,9 @@ export default {
         item: Object
     },
     methods: {
-        doAction(action) {
-            alert(action)
+        doAction(action, arg) {
+            this.$eventBus.$emit(action, arg)
+            this.$eventBus.$emit('closeBurgerMenu')
         }
     },
 }
@@ -67,13 +71,22 @@ export default {
 
 .sub-menu-wrapper {
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         .sub-menu {
             opacity: 1;
             transform: translateX(0)scale(1);
-            z-index: 2;
+            z-index: 50;
         }
+    }
+
+    .material-icons {
+        font-size: 18px;
+        color: #4e4000;
     }
 
     .sub-menu {
@@ -86,7 +99,7 @@ export default {
         left: 100%;
         top: 0;
         background: white;
-        transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        transition: all .3s ;
         width: 200px;
         padding: 10px;
         box-shadow: 0 0 2px 1px rgb(214, 214, 214);
@@ -112,5 +125,43 @@ export default {
         }
     }
 
+}
+
+@media (max-width:969px) {
+    .menu-item {
+
+        button:hover,
+        a:hover {
+            padding-left: 10px;
+            color: #333
+        }
+    }
+
+    .sub-menu-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+
+        &:hover {
+
+            .sub-menu {
+                display: flex;
+            }
+        }
+
+        span {
+            display: none;
+        }
+
+        .sub-menu {
+            margin-top: 10px;
+            display: none;
+            transform: translateX(0)scaleY(1);
+            position: static;
+            opacity: 1;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+    }
 }
 </style>
